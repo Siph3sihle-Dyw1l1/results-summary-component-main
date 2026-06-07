@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('./assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+:root {
+
+    --pry-reaction: hsl(0, 100%, 67%);
+    --pry-memory: hsl(39, 100%, 56%);
+    --pry-verbal: hsl(166, 100%, 37%);
+    --pry-visual: hsl(234, 85%, 45%);
+
+    --grad-top-slate-blue: hsl(252, 100%, 67%);
+    --grad-bottom-royal-blue: hsl(241, 81%, 54%);
+
+    --circle-top-violet-blue: hsla(256, 72%, 46%, 1);
+    --circle-bottom-persian-blue: hsla(241, 72%, 46%, 0);
+
+    --ntrl-white: hsl(0, 0%, 100%);
+    --ntl-pale-blue: hsl(221, 100%, 96%);
+    --ntrl-light-lavender: hsl(241, 100%, 89%);
+    --ntrl-dark-gary-blue: hsl(224, 30%, 27%);
+
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+    background-color: var(--ntl-pale-blue);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+}
+
+.container_card {
+    display: flex;
+    flex-direction: row;
+    max-width: 720px;
+    width: 100%;
+    border-radius: 32px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px hsla(224, 82%, 60%, 0.15);
+}
+
+.result_pnl{
+    background: linear-gradient(to bottom,var(--grad-top-slate-blue),var(--grad-bottom-royal-blue));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 24px;
+    flex:1;
+    padding: 40px 54px;
+}

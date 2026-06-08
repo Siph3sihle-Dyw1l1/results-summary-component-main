@@ -1,97 +1,86 @@
-# Frontend Mentor - Results summary component
+# Frontend Mentor - Results Summary Component Solution
 
-![Design preview for the Results summary component coding challenge](./preview.jpg)
+This is my solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+---
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this results summary component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-We provide the data for the results in a local `data.json` file. So you can use that to add the results and total score dynamically if you choose.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
-- **Bonus**: Use the local JSON data to dynamically populate the content
+- See the summary list dynamically populated using JavaScript and local JSON data
+- See the average score calculated automatically from the data instead of being hardcoded
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![Screenshot of my solution](./assets/images/Screenshot%202026-06-08%20032931.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [GitHub Repository](https://github.com/Siph3sihle-Dyw1l1/results-summary-component-main)
+- Live Site URL: [Live Site](https://siph3sihle-dyw1l1.github.io/results-summary-component-main/)
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+---
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+## My process
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Semantic HTML5 markup
+- CSS custom properties (variables)
+- Flexbox layout
+- Responsive design with media queries
+- Vanilla JavaScript
+- Local JSON data for dynamic content
+- Custom local font using `@font-face`
 
-## Building your project
+### What I learned
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+This project was a great exercise in bringing together HTML, CSS, and JavaScript into one complete, polished component. Here are the key things I took away from building it.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+**CSS Custom Properties** were one of the most useful things I used throughout this project. Instead of repeating the same color values like `hsl(252, 100%, 67%)` everywhere in the stylesheet, I defined all colors once inside `:root` and referenced them using `var(--variable-name)`. This made it very easy to keep the design consistent and would make future color changes effortless.
 
-## Deploying your project
+**CSS Gradients** were used in two places — the purple panel background uses a `linear-gradient` going from a light slate blue at the top to a darker royal blue at the bottom, and the score circle uses a second gradient that fades from a solid violet to fully transparent, which creates the dark glowing effect around the number.
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+**`@font-face`** taught me how to load a custom font from a local file rather than importing it from Google Fonts. Because the font file lives inside the project's assets folder, no external network request is needed, which keeps load times fast and means the font works even without internet access.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+**Flexbox** was the main layout tool for this entire project. The two-panel card uses `display: flex` with `flex-direction: row` to place the purple result panel and the white summary panel side by side. Inside each panel, Flexbox is used again to center and stack the content vertically. `justify-content: space-between` on each summary row pushes the category name to the left and the score to the right automatically.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+**Responsive Design with `@media` queries** made the component work on mobile screens. At 600px and below, the card switches from `flex-direction: row` to `flex-direction: column`, stacking the two panels on top of each other. The border radius, padding, and font sizes are all adjusted at that breakpoint as well to suit smaller screens.
 
-## Create a custom `README.md`
+**JavaScript DOM manipulation** was used to build the four summary rows dynamically from a data array instead of hardcoding them in the HTML. Using `document.createElement()` and `appendChild()` to build and insert elements taught me how JavaScript interacts with the live page structure. I also used a `for` loop to calculate the average score from the array and update the displayed number, meaning if the data ever changes, the score updates automatically without touching the HTML.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+**Debugging JavaScript** was also a big part of this project. I encountered several bugs including using regular quotes instead of backticks for template literals, a typo in a variable name (`ccsClass` instead of `cssClass`), mismatched CSS class names in the innerHTML, and forgetting to call `appendChild()` to actually add elements to the page. Finding and fixing these taught me to read error messages carefully and check every detail.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+### Continued development
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+Going forward I want to focus on the following areas:
 
-## Submitting your solution
+- **CSS Grid** — Flexbox handled this project well but I want to get comfortable with Grid for more complex two-dimensional layouts where rows and columns need to align with each other.
+- **The `fetch()` API** — In this project the data lived in a local JavaScript array. I want to practice fetching real data from an external JSON file or API endpoint using `fetch()` and handling the promise-based response correctly.
+- **CSS Animations and Transitions** — The hover effect on the Continue button uses a simple color transition, but I want to explore keyframe animations to bring UI components to life with entrance effects and interactive feedback.
+- **Accessibility** — I want to learn more about writing HTML that works well with screen readers, including proper use of ARIA attributes, focus management, and color contrast requirements.
+- **Version control with Git** — This project introduced me to pushing code to GitHub and deploying with GitHub Pages, and I want to get more comfortable with branching, commits, and collaborative workflows.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+---
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+## Author
 
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+- GitHub - [@Siph3sihle-Dyw1l1](https://github.com/Siph3sihle-Dyw1l1)
+- Frontend Mentor - [@Siph3sihle-Dyw1l1](https://www.frontendmentor.io/profile/Siph3sihle-Dyw1l1)

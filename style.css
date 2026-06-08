@@ -210,6 +210,37 @@ main {
     color: var(--pry-visual);
 }
 
-.continue_btn{
+.continue_btn {
     background-color: var(--ntrl-dark-gary-blue);
+    color: var(--ntrl-white);
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 125px;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: auto;
 }
+
+.continue_btn:hover {
+    background: linear-gradient(to bottom, var(--grad-top-slate-blue), var(--grad-bottom-royal-blue));
+}
+
+.attribution {
+  margin-top: 24px;
+  font-size: 12px;
+  text-align: center;
+  color: var(--ntrl-dark-gary-blue);
+}
+ 
+.attribution a {
+  color: var(--ntrl-dark-gary-blue);
+  text-decoration: none;
+}
+ 
+.attribution a:hover {
+  text-decoration: underline;
+}
+
